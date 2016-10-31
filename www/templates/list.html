@@ -1,13 +1,14 @@
 
-    <ion-header-bar class="bar-positive">
+   <ion-view view-title="Artist List">
 
+    <ion-nav-buttons side="primary">
       <button class="button button-icon ion-minus-circled" ng-click="data.showDelete = !data.showDelete; data.showReorder = false;"></button>
+    </ion-nav-buttons>
 
-      <h2 class="title">Artist List</h2>
-
+    <ion-nav-buttons side="secondary">
       <button class="button button-icon ion-navicon" ng-click="data.showReorder = !data.showReorder; data.showDelete = false;"></button>
+    </ion-nav-buttons>
 
-    </ion-header-bar>
 
     <div class="bar bar-subheader item-input-inset bar-light">
       <label class="item-input-wrapper">
@@ -24,7 +25,7 @@
           <img ng-src="img/{{item.shortname}}_tn.jpg" alt="{{item.name}} Photo">
           <h2>{{item.name}}</h2>
           <h3>{{item.reknown}}</h3>
-          <p>{{item.bio | limitTo:100}}{{item.bio.length > 150  ? '&hellip;' : ''}}</p>
+          <p>{{item.bio | limitTo:100 }}{{item.bio.length > 150  ? '&hellip;' : ''}}</p>
 
           <button class="button button-clear icon ion-star button-assertive" ng-click="toggleStar(item)" ng-show="item.star"></button>
 
@@ -38,3 +39,4 @@
         </ion-item>
       </ion-list>
     </ion-content>
+  </ion-view>
